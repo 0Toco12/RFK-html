@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Consulta RFK</title>
+    <style>
+        .painel {
+            background-image: url('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/RFK/script/painel.png');
+            background-position: top;
+        }
+
+        .painel2 {
+            background-image: url('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/RFK/script/painel2.png');
+            background-position: center;
+        }
+
+        .malte {
+            background-image: url('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/RFK/script/malte.png');
+            background-position: top;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <hr class="ze">
+        <img class="img" src="./rfk-logo1.jpg">
+        <div class="rodape">
+            <hr class="divisa">
+            <p>PCP / Processos</p>
+        </div>
+    </div>
+    <div class="cabecalho">
+        <hr class="hr1">
+        <div>
+            <h1 id="titulo">Adega Cerveja Concentrada</h1>
+        </div>
+        <hr class="hr2">
+    </div>
+    <div class="painel" id="imagem">
+        <i id="esquerda" class="fa-solid fa-circle-chevron-left" style="color: #00aca0; font-size: 35px;"></i>
+        <i id="direita" class="fa-solid fa-circle-chevron-right" style="color: #00aca0; font-size: 35px;"></i>
+    </div>
+    <div class="marca"></div>
+    <script>
+        const inicio = document.getElementById('loading-screen');
+
+        setTimeout(function() {
+            inicio.style.opacity = '0';
+        }, 5000);
+        inicio.addEventListener('transitionend', function() {
+            this.style.display = 'none'
+        });
+
+        if (sessionStorage.getItem('jsReloaded')) {
+            // Se a página foi recarregada pelo JavaScript, oculta a tela de carregamento imediatamente
+            inicio.style.display = 'none';
+        } else {
+            // Se a página não foi recarregada pelo JavaScript, mostra a tela de carregamento por 5 segundos
+            setTimeout(function() {
+                inicio.style.opacity = '0';
+            }, 5000);
+        }
+
+        setInterval(function() {
+            sessionStorage.setItem('jsReloaded', 'true');
+            location.reload();
+        }, 180000);
+
+        var currentImg = 0;
+        var imgArray = [
+            'painel2',
+            'painel',
+            'malte'
+        ]
+
+        const img = document.getElementById('imagem');
+        img.className = imgArray[0];
+        const titulo = document.getElementById('titulo');
+
+        function nextImg() {
+            currentImg++;
+            if (currentImg == imgArray.length) {
+                currentImg = 0;
+            }
+            img.className = imgArray[currentImg];
+            if(img.className === 'malte') {
+                titulo.textContent = 'Malte e Maltose';
+            } else if(img.className === 'painel') {
+                titulo.textContent = 'Adega Cerveja Filtrada';
+            } else if(img.className === 'painel2') {
+                titulo.textContent = 'Adega Cerveja Concentrada';
+            }
+        }
+
+        function prevImg() {
+            currentImg--;
+            if (currentImg < 0) {
+                currentImg = imgArray.length - 1;
+            }
+            img.className = imgArray[currentImg];
+            if(img.className === 'malte') {
+                titulo.textContent = 'Malte e Maltose';
+            } else if(img.className === 'painel') {
+                titulo.textContent = 'Adega Cerveja Filtrada';
+            } else if(img.className === 'painel2') {
+                titulo.textContent = 'Adega Cerveja Concentrada';
+            }
+        }
+
+        document.getElementById('direita').addEventListener('click', nextImg);
+        document.getElementById('esquerda').addEventListener('click', prevImg);
+
+        setInterval(nextImg, 60000);
+
+        window.addEventListener('keydown', function(event) {
+            switch (event.key) {
+                case "ArrowRight":
+                    nextImg();
+                    break;
+                case "ArrowLeft":
+                    prevImg();
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
