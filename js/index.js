@@ -13,7 +13,7 @@ if (sessionStorage.getItem('jsReloaded')) {
 } else {
     // Se a página não foi recarregada pelo JavaScript, mostra a tela de carregamento por 5 segundos
     setTimeout(function() {
-inicio.style.opacity = '0';
+        inicio.style.opacity = '0';
     }, 5000);
 }
 

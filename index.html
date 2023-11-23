@@ -3,48 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/principal.css">
+    <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Consulta RFK</title>
-    <style>
-        .painel {
-            background-image: url('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/RFK/rfk-script/painel.png');
-            background-position: top;
-        }
-
-        .painel2 {
-            background-image: url('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/RFK/rfk-script/painel2.png');
-            background-position: center;
-        }
-
-        .malte {
-            background-image: url('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/RFK/rfk-script/malte.png');
-            background-position: top;
-        }
-    </style>
 </head>
 <body>
+    <div class="conteiner" id="conteiner">
+        <div class="box-login">
+            <h2>TELA LOGIN</h2>
+            <form action="#" id="form">
+                <div class="caixa-entrada">
+                    <input type="text" id="user" required>
+                    <label>Usuário:</label>
+                </div>
+                <div class="caixa-entrada">
+                    <input type="password" id="senha" required>
+                    <label>Senha:</label>
+                </div>
+                <button type="submit" class="btn" id="btn">ENTRAR</button>
+            </form>
+        </div><!--Fim da div Form-login -->
+
+        <span style="--i:0;"></span>
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:6;"></span>
+        <span style="--i:7;"></span>
+        <span style="--i:8;"></span>
+        <span style="--i:9;"></span>
+        <span style="--i:10;"></span>
+        <span style="--i:11;"></span>
+        <span style="--i:12;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:14;"></span>
+        <span style="--i:15;"></span>
+        <span style="--i:16;"></span>
+        <span style="--i:17;"></span>
+        <span style="--i:18;"></span>
+        <span style="--i:19;"></span>
+        <span style="--i:20;"></span>
+        <span style="--i:21;"></span>
+        <span style="--i:22;"></span>
+        <span style="--i:23;"></span>
+        <span style="--i:24;"></span>
+        <span style="--i:25;"></span>
+        <span style="--i:26;"></span>
+        <span style="--i:27;"></span>
+        <span style="--i:28;"></span>
+        <span style="--i:29;"></span>
+        <span style="--i:30;"></span>
+        <span style="--i:31;"></span>
+        <span style="--i:32;"></span>
+        <span style="--i:33;"></span>
+        <span style="--i:34;"></span>
+        <span style="--i:35;"></span>
+        <span style="--i:36;"></span>
+        <span style="--i:37;"></span>
+        <span style="--i:38;"></span>
+        <span style="--i:39;"></span>
+        <span style="--i:40;"></span>
+        <span style="--i:41;"></span>
+        <span style="--i:42;"></span>
+        <span style="--i:43;"></span>
+        <span style="--i:44;"></span>
+        <span style="--i:45;"></span>
+        <span style="--i:46;"></span>
+        <span style="--i:47;"></span>
+        <span style="--i:48;"></span>
+        <span style="--i:49;"></span>
+
+    </div><!--Fim da primeira div conteiner -->
+    
     <div id="loading-screen">
         <hr class="ze">
-        <img class="img" src="./rfk-logo1.jpg">
+        <img class="img" src="./img/rfk-logo1.jpg">
         <div class="rodape">
             <hr class="divisa">
             <p>PCP / Processos</p>
         </div>
     </div>
 
-    <div class="cabecalho">
-        <hr class="hr1">
-        <div>
-            <h1 id="titulo">Adega Cerveja Concentrada</h1>
+    <div id="principal">
+        <div class="cabecalho">
+            <hr class="hr1">
+            <div>
+                <h1 id="titulo">Adega Cerveja Concentrada</h1>
+            </div>
+            <hr class="hr2">
         </div>
-        <hr class="hr2">
+        <div class="painel" id="imagem">
+            <i id="esquerda" class="fa-solid fa-circle-chevron-left" style="color: #00aca0; font-size: 35px;"></i>
+            <i id="direita" class="fa-solid fa-circle-chevron-right" style="color: #00aca0; font-size: 35px;"></i>
+        </div>
+        <div class="marca"></div>
     </div>
-    <div class="painel" id="imagem">
-        <i id="esquerda" class="fa-solid fa-circle-chevron-left" style="color: #00aca0; font-size: 35px;"></i>
-        <i id="direita" class="fa-solid fa-circle-chevron-right" style="color: #00aca0; font-size: 35px;"></i>
-    </div>
-    <div class="marca"></div>
-    <script src="index.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/login.js"></script>
 </body>
 </html>

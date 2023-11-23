@@ -1,0 +1,127 @@
+.conteiner {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #1f293a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.box-login {
+    width: 400px;
+    position: absolute;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #0ef;
+    text-align: center;
+}
+
+.box-login form {
+    width: 100%;
+    padding: 25px 0;
+}
+
+.caixa-entrada {
+    position: relative;
+    margin: 20px 0;
+}
+
+.caixa-entrada input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 40px;
+}
+
+.caixa-entrada label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s ease;
+}
+
+.caixa-entrada input:focus~label,
+.caixa-entrada input:valid~label {
+    top: 1px;
+    font-size: .8rem;
+    background: #1f293a;
+    padding: 0 6px;
+    color: #0ef;
+}
+
+.caixa-entrada input:focus,
+.caixa-entrada input:valid {
+    border-color: #0ef;
+    transition: .8s;
+}
+
+.caixa-entrada input {
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.btn {
+    width: 80%;
+    height: 45px;
+    margin-left: 45px;
+    background: #0ef;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: #1f293a;
+    font-weight: 900;
+}
+
+.btnErrado {
+    width: 80%;
+    height: 45px;
+    margin-left: 45px;
+    background: #ee2f2f;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: #1f293a;
+    font-weight: 900;
+    animation: tremer .3s;
+}
+
+.conteiner span {
+    position: absolute;
+    left: 34.5rem;
+    width: 30px;
+    height: 5px;
+    background: #2c4766;
+    transform-origin: 128px;
+    transform: scale(2.2) rotate(calc(var(--i)*(360deg / 50)));
+    animation: animacao 3s linear infinite;
+    animation-delay: calc(var(--i)*(3s / 50));
+    border-radius: 50%;
+}
+
+@keyframes animacao {
+    0% { background: #0ef; }
+    25% { background: #2c4766; }
+}
+
+@keyframes tremer {
+    0% {margin-left: 45px;}
+    25% {margin-left: 50px;}
+    50% {margin-left: 45px;}
+    75% {margin-left: 40px;}
+    100% {margin-left: 45px;}
+}

@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto',Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* body {
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: center;
+    color: #00aca0;
+    background: #1f293a;
+} */
+
+.painel {
+    background-image: url('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/RFK/rfk-script/painel.png');
+    background-position: top;
+}
+
+.painel2 {
+    background-image: url('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/RFK/rfk-script/painel2.png');
+    background-position: center;
+}
+
+.malte {
+    background-image: url('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/RFK/rfk-script/malte.png');
+    background-position: top;
+}
+
+
+#loading-screen {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    background-size: cover;
+    z-index: 8888;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    font-size: 25px;
+    transition: opacity 2s ease-out;
+}
+
+#principal {
+    display: none;
+}
+
+.ze {
+    width: 100vw;
+    height: 40px;
+    background: #00aca0;
+    border: none;
+}
+
+.img {
+    width: 60%;
+    height: 70%;
+}
+
+.rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.divisa {
+    width: 100vw;
+    height: 5px;
+    background: #00aca0;
+    border: none;
+}
+
+.rodape p {
+    margin-right: 20px;
+}
+
+
+.cabecalho {
+    width: 100vw;
+    top: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+hr {
+    border: none;
+}
+
+.hr1 {
+    width: 100%;
+    height: 40px;
+    background: #00aca0;
+}
+
+#imagem .cabecalho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+.hr2 {
+    width: 100%;
+    height: 5px;
+    background: #00aca0;
+}
+
+#imagem {
+    height: 29.2rem;
+    width: 72.6rem;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+i:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.marca {
+    height: 85px;
+    width: 100vw;
+    background: url(./marcas.jpg);
+    bottom: 0;
+    position: absolute;
+    border-top: 5px solid #000;
+    animation: mover 10s linear infinite;
+}
+
+@keyframes mover {
+    0% { background-position: 0px; }
+    100% { background-position: -1225px; }
+}
+
+@media (max-width: 1367px) {
+    #loading-screen { gap: 9% };
+}
+@media (min-width: 1369px) {
+    #loading-screen { gap: 10% };
+}
+@media (min-width: 1920px) {
+    #loading-screen { gap: 11% }
+}
+@media (min-width: 2460px) {
+    #loading-screen { gap: 12% }
+}
+
+
+
+
+
+
+
+/* .conteiner {
+    position: relative;
+    width: 256px;
+    height: 256px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-login {
+    width: 400px;
+    position: absolute;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #0ef;
+    text-align: center;
+}
+
+.box-login form {
+    width: 100%;
+    padding: 25px 0;
+}
+
+.caixa-entrada {
+    position: relative;
+    margin: 20px 0;
+}
+
+.caixa-entrada input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 40px;
+}
+
+.caixa-entrada label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s ease;
+}
+
+.caixa-entrada input:focus~label,
+.caixa-entrada input:valid~label {
+    top: 1px;
+    font-size: .8rem;
+    background: #1f293a;
+    padding: 0 6px;
+    color: #0ef;
+}
+
+.caixa-entrada input:focus,
+.caixa-entrada input:valid {
+    border-color: #0ef;
+    transition: .8s;
+}
+
+.caixa-entrada input {
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.btn {
+    width: 80%;
+    height: 45px;
+    margin-left: 2.8125rem;
+    background: #0ef;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: #1f293a;
+    font-weight: 900;
+}
+
+.btnErrado {
+    width: 80%;
+    height: 45px;
+    margin-left: 45px;
+    background: #ff3122;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: #1f293a;
+    font-weight: 900;
+    animation: treme 0.1s;
+    animation-iteration-count: 3;
+}
+
+@keyframes treme {
+    0% {margin-left: 45;}
+    25% {margin-left: 50px;}
+    50% {margin-left: 45;}
+    75% {margin-left: 40px;}
+    100% {margin-left: 45;}
+}
+
+.conteiner span {
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 5px;
+    background: #2c4766;
+    transform-origin: 128px;
+    transform: scale(2.2) rotate(calc(var(--i)*(360deg / 50)));
+    animation: animacao 3s linear infinite;
+    animation-delay: calc(var(--i)*(3s / 50));
+    border-radius: 50%;
+}
+
+@keyframes animacao {
+    0% { background: #0ef; }
+    25% { background: #2c4766; }
+} */
