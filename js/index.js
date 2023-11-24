@@ -1,20 +1,32 @@
 const inicio = document.getElementById('loading-screen');
+const conteiner = document.getElementById('conteiner');
+const user = document.getElementById('user');
+const senha = document.getElementById('senha');
+const btn = document.getElementById('btn');
 
-setTimeout(function() {
-    inicio.style.opacity = '0';
-}, 5000);
-inicio.addEventListener('transitionend', function() {
-    this.style.display = 'none'
-});
+btn.addEventListener("click", () => {
+    if(user.value != "admin" && senha.value != "admin") {
+        btn.setAttribute("class", "btnErrado");
+        trocaClasse()
+    } else if(user.value == "admin" && senha.value == "admin") {
+        tiraLogin();
+        setTimeout(function() {
+            inicio.style.opacity = '0';
+        }, 5000);
+        inicio.addEventListener('transitionend', function() {
+            this.style.display = 'none'
+        });
+    }
+})
 
-if (sessionStorage.getItem('jsReloaded')) {
-    // Se a página foi recarregada pelo JavaScript, oculta a tela de carregamento imediatamente
-    inicio.style.display = 'none';
-} else {
-    // Se a página não foi recarregada pelo JavaScript, mostra a tela de carregamento por 5 segundos
+function tiraLogin() {
+    conteiner.style.display = 'none';
+}
+
+function trocaClasse() {
     setTimeout(function() {
-        inicio.style.opacity = '0';
-    }, 5000);
+        btn.setAttribute("class", "btn");
+    }, 1000);
 }
 
 setInterval(function() {

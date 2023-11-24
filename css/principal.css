@@ -8,27 +8,16 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-/* body {
     height: 100vh;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     overflow: hidden;
-    justify-content: center;
     color: #00aca0;
     background: #1f293a;
-} */
+}
 
 .painel {
     background-image: url('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/RFK/rfk-script/painel.png');
-    background-position: top;
+    background-position: center;
 }
 
 .painel2 {
@@ -38,7 +27,7 @@ body {
 
 .malte {
     background-image: url('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/RFK/rfk-script/malte.png');
-    background-position: top;
+    background-position: center;
 }
 
 
@@ -55,10 +44,6 @@ body {
     flex-direction: column;
     font-size: 25px;
     transition: opacity 2s ease-out;
-}
-
-#principal {
-    display: none;
 }
 
 .ze {
@@ -94,7 +79,6 @@ body {
 .cabecalho {
     width: 100vw;
     top: 0;
-    position: absolute;
     display: flex;
     flex-direction: column;
 }
@@ -126,16 +110,18 @@ h1 {
 }
 
 #imagem {
+    position: static;
     height: 29.2rem;
-    width: 72.6rem;
+    width: 100vw;
     background-repeat: no-repeat;
-    background-size: 90%;
+    background-size: 75%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 i:hover {
+    margin: 0 5px;
     cursor: pointer;
     transform: scale(1.2);
 }
@@ -143,7 +129,7 @@ i:hover {
 .marca {
     height: 85px;
     width: 100vw;
-    background: url(./marcas.jpg);
+    background: url(../img/marcas.jpg);
     bottom: 0;
     position: absolute;
     border-top: 5px solid #000;
