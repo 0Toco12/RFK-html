@@ -16,17 +16,17 @@ body {
 }
 
 .painel {
-    background-image: url('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/RFK/rfk-script/painel.png');
+    background-image: url(../img/painel.png);
     background-position: center;
 }
 
 .painel2 {
-    background-image: url('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/RFK/rfk-script/painel2.png');
+    background-image: url(../img/painel2.png);
     background-position: center;
 }
 
 .malte {
-    background-image: url('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/RFK/rfk-script/malte.png');
+    background-image: url(../img/malte.png);
     background-position: center;
 }
 
@@ -99,6 +99,11 @@ hr {
     align-items: center;
 }
 
+.divTitulo {
+    display: flex;
+    justify-content: center;
+}
+
 h1 {
     font-size: 30px;
 }
@@ -153,7 +158,6 @@ i:hover {
 @media (min-width: 2460px) {
     #loading-screen { gap: 12% }
 }
-
 
 
 

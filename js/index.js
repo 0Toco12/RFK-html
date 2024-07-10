@@ -4,32 +4,40 @@ const user = document.getElementById('user');
 const senha = document.getElementById('senha');
 const btn = document.getElementById('btn');
 
-btn.addEventListener("click", () => {
-    if(user.value != "admin" && senha.value != "admin") {
-        btn.setAttribute("class", "btnErrado");
-        trocaClasse()
-    } else if(user.value == "admin" && senha.value == "admin") {
-        tiraLogin();
-        setTimeout(function() {
-            inicio.style.opacity = '0';
-        }, 5000);
-        inicio.addEventListener('transitionend', function() {
-            this.style.display = 'none'
-        });
-    }
-})
+// btn.addEventListener("click", () => {
+//     if(user.value != "admin" && senha.value != "admin") {
+//         btn.setAttribute("class", "btnErrado");
+//         trocaClasse()
+//     } else if(user.value == "admin" && senha.value == "admin") {
+//         tiraLogin();
+//         setTimeout(function() {
+//             inicio.style.opacity = '0';
+//         }, 5000);
+//         inicio.addEventListener('transitionend', function() {
+//             this.style.display = 'none'
+//         });
+//     }
+// })
+
+function iniciou() {
+    setTimeout(function () {
+        inicio.style.opacity = '0';
+    }, 5000);
+}
+
+iniciou();
 
 function tiraLogin() {
     conteiner.style.display = 'none';
 }
 
 function trocaClasse() {
-    setTimeout(function() {
+    setTimeout(function () {
         btn.setAttribute("class", "btn");
     }, 1000);
 }
 
-setInterval(function() {
+setInterval(function () {
     sessionStorage.setItem('jsReloaded', 'true');
     location.reload();
 }, 180000);
@@ -51,11 +59,11 @@ function nextImg() {
         currentImg = 0;
     }
     img.className = imgArray[currentImg];
-    if(img.className === 'malte') {
+    if (img.className === 'malte') {
         titulo.textContent = 'Malte e Maltose';
-    } else if(img.className === 'painel') {
+    } else if (img.className === 'painel') {
         titulo.textContent = 'Adega Cerveja Filtrada';
-    } else if(img.className === 'painel2') {
+    } else if (img.className === 'painel2') {
         titulo.textContent = 'Adega Cerveja Concentrada';
     }
 }
@@ -66,11 +74,11 @@ function prevImg() {
         currentImg = imgArray.length - 1;
     }
     img.className = imgArray[currentImg];
-    if(img.className === 'malte') {
+    if (img.className === 'malte') {
         titulo.textContent = 'Malte e Maltose';
-    } else if(img.className === 'painel') {
+    } else if (img.className === 'painel') {
         titulo.textContent = 'Adega Cerveja Filtrada';
-    } else if(img.className === 'painel2') {
+    } else if (img.className === 'painel2') {
         titulo.textContent = 'Adega Cerveja Concentrada';
     }
 }
@@ -80,7 +88,7 @@ document.getElementById('esquerda').addEventListener('click', prevImg);
 
 setInterval(nextImg, 60000);
 
-window.addEventListener('keydown', function(event) {
+window.addEventListener('keydown', function (event) {
     switch (event.key) {
         case "ArrowRight":
             nextImg();
