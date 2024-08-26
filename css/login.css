@@ -85,6 +85,11 @@ h2 {
     font-weight: 900;
 }
 
+.btn:hover {
+    transform: scale(1.2);
+    transition: 1s;
+}
+
 .btnErrado {
     width: 80%;
     height: 45px;

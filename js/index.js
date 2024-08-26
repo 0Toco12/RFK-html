@@ -4,20 +4,15 @@ const user = document.getElementById('user');
 const senha = document.getElementById('senha');
 const btn = document.getElementById('btn');
 
-// btn.addEventListener("click", () => {
-//     if(user.value != "admin" && senha.value != "admin") {
-//         btn.setAttribute("class", "btnErrado");
-//         trocaClasse()
-//     } else if(user.value == "admin" && senha.value == "admin") {
-//         tiraLogin();
-//         setTimeout(function() {
-//             inicio.style.opacity = '0';
-//         }, 5000);
-//         inicio.addEventListener('transitionend', function() {
-//             this.style.display = 'none'
-//         });
-//     }
-// })
+btn.addEventListener("click", () => {
+    tiraLogin();
+    setTimeout(function() {
+        inicio.style.opacity = '0';
+    }, 5000);
+    inicio.addEventListener('transitionend', function() {
+        this.style.display = 'none'
+    });
+})
 
 function iniciou() {
     setTimeout(function () {
@@ -25,17 +20,17 @@ function iniciou() {
     }, 5000);
 }
 
-iniciou();
+// iniciou();
 
 function tiraLogin() {
     conteiner.style.display = 'none';
 }
 
-function trocaClasse() {
-    setTimeout(function () {
-        btn.setAttribute("class", "btn");
-    }, 1000);
-}
+// function trocaClasse() {
+//     setTimeout(function () {
+//         btn.setAttribute("class", "btn");
+//     }, 1000);
+// }
 
 setInterval(function () {
     sessionStorage.setItem('jsReloaded', 'true');
